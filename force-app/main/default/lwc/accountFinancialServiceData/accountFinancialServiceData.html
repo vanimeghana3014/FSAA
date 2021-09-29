@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-box slds-theme--default">
+        <div class="slds-text-color_inverse slds-text-heading_large" style="padding:0.5rem;">        
+            Financial Services Account Listing
+        </div>
+        <div class="slds-float_right">        
+            <lightning-input type="search" onblur={handleKeyChange} class="slds-m-bottom_small" label="Search" maxlength="40">  
+            </lightning-input>  
+        </div>
+        <lightning-datatable key-field="Id" 
+                                            data={contacts} 
+                                            columns={columns} 
+                                            hide-checkbox-column="true" 
+                                            show-row-number-column="true"
+                                            sorted-by={sortBy}
+                                     sorted-direction={sortDirection}
+                                     onsort={doSorting}
+                                            onsave={handleSave}
+                                            draft-values={draftValues}                                            > 
+                    </lightning-datatable>
+
+    </div>
+</template>
